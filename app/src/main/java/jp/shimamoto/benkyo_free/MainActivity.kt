@@ -55,13 +55,23 @@ class MainActivity : AppCompatActivity() {
 
          */
 
-fun xLine() {
-    var xId = emptyArray<String>()
-    for (i in 0..30){
-        //// 配列に追加
 
-    }
-}
+
+        val xId: MutableList<String> = mutableListOf()
+        val cal = Calendar.getInstance()
+        cal.time = Date()
+        val df = SimpleDateFormat("yyyyMMdd")
+
+
+        for (i in 0..30) {
+        cal.add(Calendar.DATE, -1)
+         val a = df.format(cal.time)
+        xId.add(a)
+        }
+
+        textView1.text = xId[0]
+        textView2.text = xId[18]
+        textView3.text = xId[19]
 
     }
 }
